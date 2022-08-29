@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import logo from './logo.svg'
 import './App.css'
+import { StyledColorBlock } from './index.style'
 
 
 
@@ -15,7 +16,7 @@ const App = () => {
 
   return (
     <>
-      <div style={{ width: '50px', height: '50px', background: areaColor }}>{areaColor}</div>
+      <StyledColorBlock style= {{background: areaColor }}>{areaColor}</StyledColorBlock>
       <button onClick={changeToRandomColor}>change color</button>
     </>
   )
