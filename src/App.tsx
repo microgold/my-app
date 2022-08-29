@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import logo from './logo.svg'
+import './App.css'
 
-function App() {
+
+
+const App = () => {
+  const colors: string[] = ['red', 'brown', 'lightgreen', 'yellow', 'green', 'orange', 'purple', 'blue'  ]
+
+  const [areaColor, setAreaColor] = useState('white')
+
+  const changeToRandomColor = () => {
+    setAreaColor(colors[Math.floor(Math.random() * colors.length)])
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <div style={{ width: '50px', height: '50px', background: areaColor }}>{areaColor}</div>
+      <button onClick={changeToRandomColor}>change color</button>
+    </>
+  )
 }
 
 export default App;
