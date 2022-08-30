@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import logo from './logo.svg'
 import './App.css'
-import { StyledColorBlock } from './index.style'
+import { StyledChangeColorButton, StyledColorBlock } from './index.style'
 
 
 
@@ -16,8 +16,8 @@ const App = () => {
 
   return (
     <>
-      <StyledColorBlock style= {{background: areaColor }}>{areaColor}</StyledColorBlock>
-      <button onClick={changeToRandomColor}>change color</button>
+      <StyledColorBlock fill={areaColor}>{areaColor}</StyledColorBlock>
+      <StyledChangeColorButton onClick={changeToRandomColor}>change color</StyledChangeColorButton>
     </>
   )
 }
